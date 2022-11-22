@@ -1,0 +1,541 @@
+@import url('https://fonts.googleapis.com/css2?family=Molle&family=Montserrat&display=swap');
+
+		/* CSS Reset */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+		/* Global styles */
+
+h1 , h2 , h3{
+	font-family: Molle;
+}
+
+h4 , p , q , small , nav , button , form{
+	font-family: Montserrat;
+}
+
+#skip{
+	position: absolute;
+	left: -10000px;
+	top: auto;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+
+.sr-only{
+	visibility: hidden;
+}
+
+header{
+	background: linear-gradient(180deg, rgba(85,188,213,1) 0%, rgba(255,255,255,1) 100%);
+}
+
+#plan{
+	background: #F6D64A;
+	padding-bottom: 10px;
+}
+
+#plan section{
+	border: 3px solid white;
+	border-radius: 5%;
+	background: #55BCD5;
+}
+
+#plan section h4{
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 1em;
+	padding: 20px;
+}
+
+#plan section img{
+	display: grid;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 20px;
+}
+
+#testimonials section{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	max-width: 50%;
+	margin-bottom: 20px;
+}
+
+#testimonials h4{
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 1.5em;
+}
+
+q{
+	quotes: '"' '"';
+	/* I have no idea why these don't work and the documentation on CSS quotes is pretty poor */
+}
+
+#about{
+	background: #499BD2;
+}
+
+#about h4{
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 1.5em;
+}
+
+#about div{
+	display: grid;
+	grid-row: 2;
+	grid-column: 2;
+
+}
+
+#about section{
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	max-width: 100%;
+	margin-bottom: 20px;
+	align-items: center;
+	justify-content: center;
+	place-self: center;
+}
+
+#about section img{
+	width: 60%;
+}
+
+#contact h3 span{
+	font-family: Montserrat;
+	font-size: 0.5em;
+}
+
+#contact label , #contact legend{
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.required{
+	color: #499BD2;
+}
+
+#contact input , #contact select{
+	border: 2px solid #9B26B0;
+	margin-bottom: 10px;
+	width: 50%;
+	font-family: Montserrat;
+}
+
+fieldset input{
+	width: 100%;
+	height: 1.5rem;
+	margin-left: -35px;
+	border: 2px solid #9B26B0;
+}
+
+fieldset label span{
+	margin-left: -30px;
+	font-weight: lighter;
+	text-transform: none;
+}
+
+
+#contact [type="submit"]{
+	font-family: Montserrat;
+	background: #9B26B0;
+	text-transform: uppercase;
+	font-weight: bold;
+	color: white;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+footer{
+	background: #EAEAEA;
+	font-family: Montserrat;
+}
+
+		/* Small Screens */
+
+@media screen and (max-width: 480px){
+	nav{
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		text-align: center;
+		margin-left: 70%;
+	}
+
+	#menu-toggle ul{
+		display: none;
+	}
+
+	#toggle{
+		display: none;
+	}
+
+	#toggle:checked ~ ul{
+		display: inline;
+		text-transform: uppercase;
+		z-index: 1;
+	}
+
+	#toggle:checked ~ label{
+		background: #222222;
+		color: white;
+		margin-left: -230%;
+		padding-left: 200%;
+		padding-right: 90%;
+	}
+
+	nav li{
+		text-align: center;
+		margin-left: -230%;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		background: #499BD2;
+		border-bottom: 2px solid black;
+	}
+
+	nav li:first-of-type{
+		margin-top: 20px;
+	}
+
+	nav a{
+		font-weight: bold;
+		color: black;
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+
+	[for="toggle"]{
+		background: #F6D64A;
+		padding: 20px;
+		padding-left: 40px;
+		padding-right: 40px;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+
+	header h1 , #intro h2 {
+		margin-left: 20px;
+		font-size: 3em;
+	}
+
+	header p , #intro p{
+		margin-left: 20px;
+		margin-bottom: 2em;
+	}
+
+	#intro img{
+		width: 100%;
+	}
+
+	#plan section{
+		margin-left: auto;
+		margin-right: auto;
+		width:70%;
+		margin-bottom: 10px;
+	}
+
+	#plan h3{
+		text-align: center;
+		font-size: 2em;
+		margin-left: -80px;
+		padding-top: 20px;
+	}
+
+	#testimonials h3{
+		text-align: center;
+		font-size: 2em;
+		margin-left: -80px;
+		padding-top: 20px;
+	}
+
+	#about h3{
+		text-align: center;
+		font-size: 2em;
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+
+	#about section:first-of-type , #about section:nth-of-type(2){
+		grid-row: 1;
+	}
+
+	#about section:nth-of-type(3) , #about section:last-of-type{
+		grid-row: 2;
+	}
+
+	#contact h3{
+		text-align: center;
+		font-size: 2em;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		margin-left: -80px;
+	}
+
+	#contact form{
+		font-size: 1.2em;
+		margin-left: 30%;
+	}
+
+	#contact form label{
+		display: block;
+	}
+
+	footer{
+		text-align: center;
+		padding-top: 10px;
+	}
+
+	footer a{
+		display: block;
+		text-decoration: none;
+		color: black;
+		margin-top: 10px;
+	}
+}
+		/* Medium Screens */
+
+@media screen and (min-width: 720px){
+	
+	h1{
+		font-size: 3em;
+		top: 0;
+		margin-top: -80px;
+		margin-left: 250px;
+	}
+
+	header p{
+		display: block;
+		margin-left: 250px;
+	}
+
+	nav label , [type="checkbox"]{
+		display: none;
+	}
+
+	nav li{
+		list-style: none;
+		display: inline;
+		margin-left: 5px;
+		margin-right: 5px;
+		background: white;
+		font-weight: bold;
+		padding: 10px;
+	}
+
+	nav li:hover{
+		background: #F6D64A;
+	}
+
+	nav a{
+		text-decoration: none;
+		color: black;
+	}
+
+	nav ul{
+		text-align: center;
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+
+	#intro h2{
+		font-size: 3em;
+		margin-left: 50px;
+	}
+
+	#intro p{
+		margin-left: 50px;
+		margin-right: 50px;
+	}
+
+	#img-grid{
+		display: grid;
+		grid-template-columns: 2fr;
+		grid-template-rows: 2fr;
+		grid-gap: 10px;
+		margin-left: 50px;
+		margin-right: 50px;
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+
+	#img-grid img{
+		grid-row: 1;
+		width: 100%;
+	}
+
+	#img-grid img:last-of-type{
+		grid-row: 1;
+	}
+
+	#img-grid picture{
+		width: 200%;
+		margin-right: 10px;
+	}
+
+	#plan h3{
+		font-size: 3em;
+		margin-left: 50px;
+		padding-top: 20px;
+		margin-bottom: 20px;
+	}
+
+	#plan div{
+		display: grid;
+		grid-template-columns: repeat(2, 40%);
+		grid-gap: 20px;
+		justify-content: center;
+	}
+
+	#testimonials h3{
+		font-size: 3em;
+		margin-left: 50px;
+		padding-top: 20px;
+		margin-bottom: 20px;
+	}
+
+	#testimonials div{
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 20px;
+		justify-content: center;
+	}
+
+	#about h3{
+		font-size: 3em;
+		margin-left: 50px;
+		padding-top: 20px;
+		margin-bottom: 20px;
+	}
+
+	#about div{
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		justify-content: center;
+	}
+
+	#contact h3{
+		font-size: 3em;
+		margin-left: 50px;
+		padding-top: 20px;
+		margin-bottom: 20px;
+	}
+
+	#contact input , #contact select{
+		display: inline;
+		border: 2px solid #9B26B0;
+		margin-bottom: 10px;
+		width: 50%;
+		font-family: Montserrat;
+	}
+
+	form{
+		text-align: center;
+	}
+
+	fieldset legend{
+		margin-left: 39%;
+		text-align: center;
+	}
+
+	fieldset input{
+		width: 100%;
+		height: 1.5rem;
+		border: 2px solid #9B26B0;
+		margin-left: -70px;
+	}
+
+	fieldset label span{
+		font-weight: lighter;
+		text-transform: none;
+		margin-left: -90px;
+	}
+
+	#names label , #names input{
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	[for="email"] , [for="phone"] , #email , #phone{
+		display: block;
+	}
+
+	#mySubmit{
+		margin-left: 35%;
+		max-width: 15%;
+	}
+
+	footer{
+		text-align: center;
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+
+	footer p{
+		display: inline;
+	}
+
+	footer a{
+		text-decoration: none;
+		color: black;
+		display: inline;
+		margin-left: 10px;
+	}
+}
+
+		/* Large Screens */
+
+		/* Will resubmit with large screen styles if I have time. Final is more important!*/
